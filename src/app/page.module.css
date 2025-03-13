@@ -1,0 +1,233 @@
+.mainBody {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+  position: relative;
+  color: #2c3e50; /* Darker text for a more professional look */
+  width: 100%;
+  max-width: 100vw;
+}
+
+.landingSection {
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: clamp(1rem, 5vw, 2.5rem);
+  background-color: #f9f9f9; /* Subtle off-white background */
+  background-image: linear-gradient(rgba(220, 220, 220, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(220, 220, 220, 0.1) 1px, transparent 1px); /* Subtle grid pattern */
+  background-size: 20px 20px; /* Smaller, more refined grid */
+}
+
+/* Welcome Section */
+.welcomeSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 30%;
+  max-width: 80rem;
+  width: 100%;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: clamp(1rem, 4vw, 2rem);
+}
+
+.heading {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-family: 'Montserrat', 'Roboto', sans-serif; /* Modern, attractive font with good weight variation */
+  font-weight: 600;
+  color: #1a365d; /* Deep navy blue for authority */
+  margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.subHeading {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 500;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  color: #4a5568; /* Muted slate gray */
+  margin-bottom: clamp(0.75rem, 3vw, 1.25rem);
+  letter-spacing: 0.3px;
+  width: 100%;
+}
+
+.welcomeText {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-family: 'Open Sans', 'Lato', sans-serif; /* Clean, modern and highly readable */
+  color: #4a5568;
+  max-width: min(90%, 770px);
+  width: 100%;
+  line-height: 1.7;
+}
+
+/* Form container styles */
+.formContainer {
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+  padding: clamp(1.2rem, 4vw, 2.5rem);
+  background-color: #ffffff;
+  border-radius: 8px; /* Less rounded for a more professional look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  border: 1px solid #e2e8f0; /* Subtle border */
+  max-width: min(90%, 550px);
+  width: 100%;
+  min-height: clamp(250px, 50vh, 300px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1025px) {
+  .formContainer {
+    padding: 2.5rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .subHeading {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .landingSection {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .subHeading {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcomeText {
+    font-size: 1.1rem;
+  }
+
+  .formContainer {
+    max-width: 80%;
+    padding: 1.8rem;
+  }
+}
+
+/* Large Mobile Devices (Landscape) */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .landingSection {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .subHeading {
+    font-size: 0.95rem;
+  }
+
+  .welcomeText {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .formContainer {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Medium Mobile Devices (Portrait) */
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  .landingSection {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subHeading {
+    font-size: 0.9rem;
+  }
+
+  .welcomeText {
+    font-size: 0.95rem;
+    max-width: 95%;
+  }
+
+  .formContainer {
+    padding: 1.2rem;
+    max-width: 95%;
+    min-height: 280px;
+  }
+}
+
+/* Small Mobile Devices (Portrait) */
+@media only screen and (max-width: 375px) {
+  .landingSection {
+    padding: 0.8rem;
+  }
+
+  .heading {
+    font-size: 1.3rem;
+  }
+
+  .subHeading {
+    font-size: 0.85rem;
+  }
+
+  .welcomeText {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .formContainer {
+    padding: 1rem;
+    max-width: 95%;
+    min-height: 250px;
+  }
+}
+
+/* Handle orientation changes */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .landingSection {
+    min-height: 120vh;
+  }
+  
+  .welcomeSection {
+    margin-bottom: 1rem;
+  }
+  
+  .formContainer {
+    min-height: 220px;
+  }
+}
+
+/* Ensure text readability on very small screens */
+@media screen and (max-width: 280px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+  
+  .subHeading, .welcomeText {
+    font-size: 0.8rem;
+  }
+  
+  .formContainer {
+    padding: 0.8rem;
+    min-height: 200px;
+  }
+}

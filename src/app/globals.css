@@ -1,26 +1,156 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Macondo&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "ArialCustom";
+  src: url("/fonts/ARIAL.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Professional color palette using your selected colors */
+  --primary-dark: #578FCA;    /* Medium blue */
+  --primary: #6A9ED3;         /* Lighter blue (derived) */
+  --primary-light: #C4D9FF;   /* Light blue */
+  --accent: #FAD0C4;          /* Soft peach */
+  --accent-light: #FFE6C9;    /* Soft orange/cream */
+  --text-dark: #2c3e50;       /* Deep charcoal (for contrast) */
+  --text-medium: #4a5568;     /* Medium slate */
+  --text-light: #718096;      /* Light slate */
+  --bg-light: #FFFFFF;        /* Pure white background */
+  --bg-medium: #D9EAFD;       /* Very light blue for containers */
+  --border-color: #ADB2D4;    /* Soft purple-gray for borders */
+  --success: #BAD8B6;         /* Soft green for success */
+  --error: #FAD0C4;           /* Soft peach for errors (reused) */
+  --warning: #FFE6C9;         /* Soft orange/cream for warnings (reused) */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px !important;
+  padding: 0;
+  background-color: var(--bg-light);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: auto;
+  overflow-x: hidden;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+}
+
+canvas {
+  font-family: 'Open Sans', 'Lato', sans-serif !important;
+}
+
+html {
+  overflow: hidden;
+}
+
+.main-body {
+  max-width: 80rem /* 1280px */;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+  bottom: 0;
+  padding: 0.5rem 0;
+  position: fixed;
+  max-height: 10vh;
+  min-height: 5vh;
+}
+
+.footer-heading {
+  font-size: 0.8rem;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+}
+
+.footer-sub-heading {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-medium);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+::-webkit-backdrop-filter {
+  blur: 3px saturate(106%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.quicksand-text {
+  font-family: 'Open Sans', 'Lato', sans-serif;
+}
+
+/* Button styles for consistency */
+button {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styles for consistency */
+input, textarea, select {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.7rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(44, 82, 130, 0.1);
 }

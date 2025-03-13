@@ -1,0 +1,110 @@
+.formContainer {
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #f5f9f8; /* Cool ivory background */
+}
+
+.formInput {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d0dbd8; /* Subtle sage border */
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: #263238; /* Deep charcoal */
+}
+
+.formInput:focus {
+  border-color: #1a5f55; /* Deep teal accent */
+  box-shadow: 0 0 0 2px rgba(26, 95, 85, 0.1);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.formHeading {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  color: #0b3d35; /* Deep emerald */
+  letter-spacing: 0.5px;
+}
+
+.inputGroup {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.formButton {
+  padding: 0.5rem 2rem;
+  background: linear-gradient(90deg, #0b3d35, #1a5f55, #2a8074); /* Emerald gradient */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(11, 61, 53, 0.2);
+}
+
+.forgotPassword {
+  margin-bottom: 1rem;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+  background-color: transparent;
+  border: 0;
+  align-self: flex-end;
+  text-decoration: underline;
+  color: #1a5f55; /* Teal accent */
+  cursor: pointer;
+}
+
+.forgotPassword:hover {
+  color: #0b3d35; /* Deeper emerald on hover */
+  transform: none;
+  box-shadow: none;
+}
+
+.error {
+  color: #c53030; /* Warm red for errors */
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  margin-top: 0.5rem;
+}
+
+.success {
+  color: #2f855a; /* Forest green for success */
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  margin-top: 0.5rem;
+}
+
+/* Media queries remain the same */
