@@ -50,98 +50,109 @@ const CreateAdmin: React.FC<CreateModelProps> = ({ handleCloseModal }) => {
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
-      className={styles.formContainer}
-      aria-labelledby="admin-form-heading"
-      role="form"
-    >
-      <h2 id="admin-form-heading" className={styles.formHeading}>{`Admin's Form`}</h2>
-      <div className={styles.formSubContainer}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          className={styles.formInput}
-          id="username"
-          name="username"
-          aria-required="true"
-          aria-label="Username"
-        />
-
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className={styles.formInput}
-          id="email"
-          name="email"
-          aria-required="true"
-          aria-label="Email"
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className={styles.formInput}
-          id="password"
-          name="password"
-          aria-required="true"
-          aria-label="Password"
-        />
-
-        <input
-          type="text"
-          placeholder="Profile Pic URL"
-          value={profilePic}
-          onChange={(e) => setProfilePic(e.target.value)}
-          className={styles.formInput}
-          id="profilePic"
-          name="profilePic"
-          aria-label="Profile Picture URL"
-        />
-
-        <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className={styles.formInput}
-          id="role"
-          name="role"
-          aria-label="Admin Role"
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <form 
+          onSubmit={handleSubmit} 
+          className={styles.formContainer}
+          aria-labelledby="admin-form-heading"
+          role="form"
         >
-          <option value="admin">Admin</option>
-          <option value="superadmin">Super Admin</option>
-        </select>
+          <h2 id="admin-form-heading" className={styles.formHeading}>Add New Admin</h2>
+          
+          <div className={styles.formSubContainer}>
+            <div className={styles.formGroup}>
+              <label htmlFor="username" className={styles.formLabel}>Username</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className={styles.formInput}
+                id="username"
+                name="username"
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="email" className={styles.formLabel}>Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className={styles.formInput}
+                id="email"
+                name="email"
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="password" className={styles.formLabel}>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className={styles.formInput}
+                id="password"
+                name="password"
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="profilePic" className={styles.formLabel}>Profile Picture URL</label>
+              <input
+                type="text"
+                value={profilePic}
+                onChange={(e) => setProfilePic(e.target.value)}
+                className={styles.formInput}
+                id="profilePic"
+                name="profilePic"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="role" className={styles.formLabel}>Admin Role</label>
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className={styles.formInput}
+                id="role"
+                name="role"
+              >
+                <option value="admin">Admin</option>
+                <option value="superadmin">Super Admin</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.btnContainer}>
+            <button
+              type="button"
+              onClick={handleCloseModal}
+              className={`${styles.formButton} ${styles.cancelButton}`}
+              aria-label="Close form"
+            >
+              Cancel
+            </button>
+
+            <button 
+              type="submit" 
+              className={`${styles.formButton} ${styles.submitButton}`}
+              aria-label="Add admin"
+            >
+              Add Admin
+            </button>
+          </div>
+
+          {message && <p className={`${styles.message} ${message.includes("success") ? styles.successMessage : styles.errorMessage}`} role="status">{message}</p>}
+        </form>
       </div>
-
-      <div className={styles.btnContainer}>
-        <button
-          type="button"
-          onClick={handleCloseModal}
-          className={styles.formButton}
-          aria-label="Close form"
-        >
-          Close
-        </button>
-
-        <button 
-          type="submit" 
-          className={styles.formButton}
-          aria-label="Add admin"
-        >
-          Add
-        </button>
-      </div>
-
-      {message && <p className={styles.message} role="status">{message}</p>}
-    </form>
+    </div>
   );
 };
 

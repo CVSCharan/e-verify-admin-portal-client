@@ -9,7 +9,7 @@ const CreateVendor: React.FC<CreateModelProps> = ({ handleCloseModal }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [orgName, setOrgName] = useState("");
-  const [orgPic, setOrgPic] = useState(""); // You can add a default image URL here
+  const [orgPic, setOrgPic] = useState("");
 
   // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -53,89 +53,99 @@ const CreateVendor: React.FC<CreateModelProps> = ({ handleCloseModal }) => {
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
-      className={styles.formContainer}
-      aria-labelledby="vendor-form-heading"
-      role="form"
-    >
-      <h2 id="vendor-form-heading" className={styles.formHeading}>{`Vendor's Form`}</h2>
-      <div className={styles.formSubContainer}>
-        <input
-          placeholder="Username"
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className={styles.formInput}
-          aria-required="true"
-          aria-label="Username"
-        />
-
-        <input
-          placeholder="Email"
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className={styles.formInput}
-          aria-required="true"
-          aria-label="Email"
-        />
-
-        <input
-          placeholder="Password"
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className={styles.formInput}
-          aria-required="true"
-          aria-label="Password"
-        />
-
-        <input
-          placeholder="Org. Name"
-          type="text"
-          id="orgName"
-          value={orgName}
-          onChange={(e) => setOrgName(e.target.value)}
-          className={styles.formInput}
-          aria-label="Organization Name"
-        />
-
-        <input
-          placeholder="Org. Logo URL"
-          type="text"
-          id="orgPic"
-          value={orgPic}
-          onChange={(e) => setOrgPic(e.target.value)}
-          className={styles.formInput}
-          aria-label="Organization Logo URL"
-        />
-      </div>
-
-      <div className={styles.btnContainer}>
-        <button
-          type="button"
-          onClick={handleCloseModal}
-          className={styles.formButton}
-          aria-label="Close form"
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <form 
+          onSubmit={handleSubmit} 
+          className={styles.formContainer}
+          aria-labelledby="vendor-form-heading"
+          role="form"
         >
-          Close
-        </button>
-        <button 
-          type="submit" 
-          className={styles.formButton}
-          aria-label="Add vendor"
-        >
-          Add
-        </button>
+          <h2 id="vendor-form-heading" className={styles.formHeading}>Add New Vendor</h2>
+          
+          <div className={styles.formSubContainer}>
+            <div className={styles.formGroup}>
+              <label htmlFor="name" className={styles.formLabel}>Username</label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className={styles.formInput}
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="email" className={styles.formLabel}>Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className={styles.formInput}
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="password" className={styles.formLabel}>Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className={styles.formInput}
+                aria-required="true"
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="orgName" className={styles.formLabel}>Organization Name</label>
+              <input
+                type="text"
+                id="orgName"
+                value={orgName}
+                onChange={(e) => setOrgName(e.target.value)}
+                className={styles.formInput}
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label htmlFor="orgPic" className={styles.formLabel}>Organization Logo URL</label>
+              <input
+                type="text"
+                id="orgPic"
+                value={orgPic}
+                onChange={(e) => setOrgPic(e.target.value)}
+                className={styles.formInput}
+              />
+            </div>
+          </div>
+
+          <div className={styles.btnContainer}>
+            <button
+              type="button"
+              onClick={handleCloseModal}
+              className={`${styles.formButton} ${styles.cancelButton}`}
+              aria-label="Close form"
+            >
+              Cancel
+            </button>
+            <button 
+              type="submit" 
+              className={`${styles.formButton} ${styles.submitButton}`}
+              aria-label="Add vendor"
+            >
+              Add Vendor
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 
