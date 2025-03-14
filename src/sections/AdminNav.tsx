@@ -21,7 +21,7 @@ const AdminNav = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link href="/" className={`${styles.logo}`}>
+        <Link href="/" className={`${styles.logo} macondo-regular`}>
           E-Verify Portal
         </Link>
         <div className={styles.hamburger} onClick={toggleMenu}>

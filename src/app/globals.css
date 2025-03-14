@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Macondo&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parkinsans:wght@300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap");
 
 @font-face {
   font-family: "ArialCustom";
@@ -9,46 +8,27 @@
   font-style: normal;
 }
 
-:root {
-  /* Professional color palette using your selected colors */
-  --primary-dark: #578FCA;    /* Medium blue */
-  --primary: #6A9ED3;         /* Lighter blue (derived) */
-  --primary-light: #C4D9FF;   /* Light blue */
-  --accent: #FAD0C4;          /* Soft peach */
-  --accent-light: #FFE6C9;    /* Soft orange/cream */
-  --text-dark: #2c3e50;       /* Deep charcoal (for contrast) */
-  --text-medium: #4a5568;     /* Medium slate */
-  --text-light: #718096;      /* Light slate */
-  --bg-light: #FFFFFF;        /* Pure white background */
-  --bg-medium: #D9EAFD;       /* Very light blue for containers */
-  --border-color: #ADB2D4;    /* Soft purple-gray for borders */
-  --success: #BAD8B6;         /* Soft green for success */
-  --error: #FAD0C4;           /* Soft peach for errors (reused) */
-  --warning: #FFE6C9;         /* Soft orange/cream for warnings (reused) */
-}
-
 * {
   box-sizing: border-box !important;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', 'Roboto', sans-serif;
-  color: var(--text-dark);
+  font-family: "ArialCustom", Arial, sans-serif;
+  color: #333;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0px !important;
   padding: 0;
-  background-color: var(--bg-light);
+  background-color: whitesmoke;
   height: 100vh;
   width: 100vw;
   overflow-x: auto;
   overflow-x: hidden;
-  font-family: 'Open Sans', 'Lato', sans-serif;
 }
 
 canvas {
-  font-family: 'Open Sans', 'Lato', sans-serif !important;
+  font-family: "ArialCustom", Arial, sans-serif !important;
 }
 
 html {
@@ -61,7 +41,9 @@ html {
   margin-right: auto;
   overflow-x: hidden;
   position: relative;
-  color: var(--text-dark);
+  color: white;
+  padding: 0 1rem; /* Add padding for small screens */
+  width: 100%; /* Ensure full width */
 }
 
 .footer-container {
@@ -70,7 +52,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+  background: linear-gradient(90deg, #4b0406, #6b0f12, #a82b30);
   bottom: 0;
   padding: 0.5rem 0;
   position: fixed;
@@ -82,7 +64,6 @@ html {
   font-size: 0.8rem;
   text-align: center;
   color: white;
-  font-family: 'Montserrat', 'Roboto', sans-serif;
 }
 
 .footer-sub-heading {
@@ -90,7 +71,6 @@ html {
   text-align: center;
   margin-top: 10px;
   color: white;
-  font-family: 'Open Sans', 'Lato', sans-serif;
 }
 
 /* width */
@@ -101,56 +81,132 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--bg-medium);
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-light);
+  background: #575c66;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: #626970;
 }
 
 ::-webkit-backdrop-filter {
   blur: 3px saturate(106%);
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playwrite-gb-s-text {
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
 
 .quicksand-text {
-  font-family: 'Open Sans', 'Lato', sans-serif;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/* Button styles for consistency */
+.josefin-sans-text {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.cinzel-text {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.macondo-regular {
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Responsive Styles */
+/* Mobile Devices - Small */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .main-body {
+    padding: 0 0.75rem;
+  }
+
+  .footer-container {
+    padding: 0.4rem 0;
+  }
+
+  .footer-heading {
+    font-size: 0.7rem;
+  }
+
+  .footer-sub-heading {
+    font-size: 0.6rem;
+    margin-top: 8px;
+  }
+}
+
+/* Mobile Devices - Medium */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .main-body {
+    padding: 0 1rem;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .main-body {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make tables responsive */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Responsive flex containers */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Utility class for responsive elements */
+.responsive-element {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure form elements are responsive */
+input,
+select,
+textarea,
 button {
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
-  color: white;
-  border: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Input styles for consistency */
-input, textarea, select {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 0.7rem;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 2px rgba(44, 82, 130, 0.1);
+  max-width: 100%;
 }

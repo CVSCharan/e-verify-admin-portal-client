@@ -242,13 +242,24 @@ const CertificatesPage = () => {
   return (
     <>
       <Head>
-        <title>Certificate Management | E-Verify Portal | Technotran Solutions</title>
-        <meta name="description" content="Administrative dashboard to manage certificates in the E-Verify Portal system. View, edit, and delete certificates for verification." />
-        <meta name="keywords" content="certificate management, e-verify portal, document verification, certificate administration, technotran solutions" />
+        <title>
+          Certificate Management | E-Verify Portal | Technotran Solutions
+        </title>
+        <meta
+          name="description"
+          content="Administrative dashboard to manage certificates in the E-Verify Portal system. View, edit, and delete certificates for verification."
+        />
+        <meta
+          name="keywords"
+          content="certificate management, e-verify portal, document verification, certificate administration, technotran solutions"
+        />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="canonical" href="https://e-verify-portal.com/view-certificates" />
+        <link
+          rel="canonical"
+          href="https://e-verify-portal.com/view-certificates"
+        />
       </Head>
-      
+
       <main id="E-Verify Portal View Certificates">
         {/* Show the LoginModal if user is not authenticated */}
         {!adminUser && showModal && <LoginModal authParams="Admin" />}
@@ -257,21 +268,33 @@ const CertificatesPage = () => {
         <section className={styles.mainBody}>
           <div className={styles.landingSection}>
             <h2 className={styles.heading}>E-Verify Portal Certificates</h2>
-            <div className={styles.searchBarContainer}>
-              <input
-                type="text"
-                placeholder="Search by Name"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                className={styles.searchBar}
-              />
-              {searchQuery && (
-                <CancelOutlinedIcon
-                  onClick={handleClearSearch}
-                  className={styles.clearButton}
-                  aria-label="clear search"
+            <div className={styles.elegantSearchWrapper} role="search">
+              <div className={styles.elegantSearchContainer}>
+                <input
+                  type="text"
+                  placeholder="Search by Name"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className={styles.elegantSearchInput}
+                  aria-label="Search certificates by name"
                 />
-              )}
+                <div className={styles.searchControls}>
+                  {searchQuery ? (
+                    <CancelOutlinedIcon
+                      onClick={handleClearSearch}
+                      className={styles.elegantClearIcon}
+                      aria-label="clear search"
+                      role="button"
+                      tabIndex={0}
+                    />
+                  ) : (
+                    <div className={styles.searchIconContainer}>
+                      <span className={styles.searchIconLine}></span>
+                      <span className={styles.searchIconCircle}></span>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
             <div className={styles.dropdownContainer}>
               <select
@@ -288,7 +311,31 @@ const CertificatesPage = () => {
             </div>
             <>
               {filteredCertificates.length === 0 ? (
-                <p className={styles.noCertificates}>No certificates found.</p>
+                <div
+                  className={styles.noCertificatesContainer}
+                  aria-live="polite"
+                >
+                  <div className={styles.noCertificatesIcon}>
+                    <svg
+                      width="48"
+                      height="48"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M19 5V19H5V5H19ZM21 3H3V21H21V3ZM17 17H7V16H17V17ZM17 15H7V14H17V15ZM17 12H7V7H17V12Z"
+                        fill="#9e9e9e"
+                      />
+                    </svg>
+                  </div>
+                  <p className={styles.noCertificatesText}>
+                    No certificates found
+                  </p>
+                  <p className={styles.noCertificatesSubtext}>
+                    Try adjusting your search
+                  </p>
+                </div>
               ) : (
                 <CertificatesTable
                   certificates={filteredCertificates}

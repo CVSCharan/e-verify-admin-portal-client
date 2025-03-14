@@ -55,6 +55,18 @@
   background-color: rgba(168, 43, 48, 0.05);
 }
 
+.link {
+  color: #a82b30;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #4b0406;
+}
+
 .actionIcon {
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -90,13 +102,6 @@
   transform: scale(1.1);
 }
 
-.emptyMessage {
-  text-align: center;
-  padding: 2rem;
-  color: #6b7280;
-  font-family: "Quicksand", sans-serif;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
   .table th,
@@ -113,13 +118,6 @@
   }
 }
 
-
-/* Add these new styles */
-.tableWrapper {
-  width: 100%;
-  overflow: hidden;
-}
-
 .visuallyHidden {
   position: absolute;
   width: 1px;
@@ -132,34 +130,83 @@
   border: 0;
 }
 
-.actionButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+/* Add these responsive styles to your existing CSS file */
+/* Responsive table container */
+.responsiveTableContainer {
+  width: 100%;
+  max-width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.editButton {
-  color: #2196f3;
-}
-
-.editButton:hover {
-  background-color: rgba(33, 150, 243, 0.1);
-}
-
-.deleteButton {
-  color: #f44336;
-}
-
-.deleteButton:hover {
-  background-color: rgba(244, 67, 54, 0.1);
-}
-
-.paginationContainer {
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 80rem;
+  background-color: white;
+  border-radius: 8px;
   margin-top: 1rem;
+}
+
+/* Table wrapper to handle horizontal scrolling */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  display: table; /* Override the block display from global styles */
+}
+
+.table th,
+.table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+  background-color: #f8fafc;
+  color: #2c3e50;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid #d1d5db;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: "Josefin Sans", sans-serif;
+  white-space: nowrap;
+}
+
+.link {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .table th,
+  .table td {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+
+  .link {
+    word-break: break-word;
+  }
 }

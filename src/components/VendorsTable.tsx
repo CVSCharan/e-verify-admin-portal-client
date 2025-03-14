@@ -23,8 +23,13 @@ const VendorsTable: React.FC<VendorsTableProps> = ({
   );
 
   return (
-    <>
-      <div className={styles.tableContainer}>
+    <div
+      className={styles.responsiveTableContainer}
+      role="region"
+      aria-label="Certificates table"
+      tabIndex={0}
+    >
+      <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
             <tr>
@@ -88,30 +93,30 @@ const VendorsTable: React.FC<VendorsTableProps> = ({
             )}
           </tbody>
         </table>
-      </div>
-      <TablePagination
-        component="div"
-        count={vendors.length}
-        page={page}
-        onPageChange={onPageChange}
-        rowsPerPage={rowsPerPage}
-        labelRowsPerPage="Vendors per page:"
-        onRowsPerPageChange={onRowsPerPageChange}
-        rowsPerPageOptions={[5, 7, 10]}
-        sx={{
-          "& .MuiTablePagination-toolbar": {
-            fontFamily: `"Quicksand", sans-serif`,
-          },
-          "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input, & .MuiTablePagination-displayedRows":
-            {
+        <TablePagination
+          component="div"
+          count={vendors.length}
+          page={page}
+          onPageChange={onPageChange}
+          rowsPerPage={rowsPerPage}
+          labelRowsPerPage="Vendors per page:"
+          onRowsPerPageChange={onRowsPerPageChange}
+          rowsPerPageOptions={[5, 7, 10]}
+          sx={{
+            "& .MuiTablePagination-toolbar": {
               fontFamily: `"Quicksand", sans-serif`,
             },
-          "& .MuiTablePagination-actions": {
-            color: "#4b0406",
-          },
-        }}
-      />
-    </>
+            "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input, & .MuiTablePagination-displayedRows":
+              {
+                fontFamily: `"Quicksand", sans-serif`,
+              },
+            "& .MuiTablePagination-actions": {
+              color: "#4b0406",
+            },
+          }}
+        />
+      </div>
+    </div>
   );
 };
 

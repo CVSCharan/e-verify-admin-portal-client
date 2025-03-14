@@ -1,5 +1,4 @@
 .formContainer {
-  font-family: 'Open Sans', 'Lato', sans-serif;
   height: 100%;
   width: 100%;
   display: flex;
@@ -8,25 +7,22 @@
   align-items: center;
   gap: 0.7rem;
   padding: 0.5rem 1.5rem;
-  background-color: #f5f9f8; /* Cool ivory background */
 }
 
 .formInput {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid #d0dbd8; /* Subtle sage border */
-  border-radius: 8px;
+  border: 1px solid #ccc; /* Soft border */
+  border-radius: 8px; /* Rounded corners */
   font-size: 1.1rem;
-  font-family: 'Open Sans', 'Lato', sans-serif;
+  font-family: "Georgia", serif;
   outline: none;
   transition: border-color 0.3s ease;
-  color: #263238; /* Deep charcoal */
 }
 
 .formInput:focus {
-  border-color: #1a5f55; /* Deep teal accent */
-  box-shadow: 0 0 0 2px rgba(26, 95, 85, 0.1);
+  border-color: #4b0406; /* Soft blue for focus state */
 }
 
 .visuallyHidden {
@@ -46,9 +42,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
-  font-family: 'Montserrat', 'Roboto', sans-serif;
-  color: #0b3d35; /* Deep emerald */
-  letter-spacing: 0.5px;
 }
 
 .inputGroup {
@@ -56,27 +49,34 @@
   margin-bottom: 1rem;
 }
 
+.formHeading {
+  margin-bottom: 1rem;
+  font-family: "Georgia", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+}
+
 .formButton {
   padding: 0.5rem 2rem;
-  background: linear-gradient(90deg, #0b3d35, #1a5f55, #2a8074); /* Emerald gradient */
+  background: linear-gradient(90deg, #4b0406, #6b0f12, #a82b30);
   color: white;
   font-size: 1.1rem;
   font-weight: 500;
-  font-family: 'Open Sans', 'Lato', sans-serif;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .formButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(11, 61, 53, 0.2);
+  background: linear-gradient(90deg, #4b0406, #6b0f12, #a82b30);
 }
 
 .forgotPassword {
   margin-bottom: 1rem;
-  font-family: 'Open Sans', 'Lato', sans-serif;
+  font-family: "Georgia", serif;
   font-size: 0.85rem;
   font-weight: 600;
   text-align: center;
@@ -85,26 +85,74 @@
   border: 0;
   align-self: flex-end;
   text-decoration: underline;
-  color: #1a5f55; /* Teal accent */
-  cursor: pointer;
 }
 
-.forgotPassword:hover {
-  color: #0b3d35; /* Deeper emerald on hover */
-  transform: none;
-  box-shadow: none;
+/* Extra Small Mobile Devices (Portrait) */
+/* iPhone SE, older Android phones */
+@media only screen and (max-width: 320px) {
+  .modalContainer {
+    height: 60%;
+    width: 90%;
+  }
+
+  .formButton {
+    font-size: 0.9rem;
+  }
+
+  .formInput {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .formHeading {
+    font-size: 0.9rem;
+  }
 }
 
-.error {
-  color: #c53030; /* Warm red for errors */
-  font-family: 'Open Sans', 'Lato', sans-serif;
-  margin-top: 0.5rem;
+/* Small Mobile Devices (Portrait) */
+/* iPhone 6/7/8, Galaxy S8 */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .modalContainer {
+    height: 60%;
+    width: 90%;
+  }
+
+  .formButton {
+    font-size: 1rem;
+  }
+
+  .formInput {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .formHeading {
+    font-size: 1rem;
+  }
 }
 
-.success {
-  color: #2f855a; /* Forest green for success */
-  font-family: 'Open Sans', 'Lato', sans-serif;
-  margin-top: 0.5rem;
+/* Medium Mobile Devices (Portrait) */
+/* iPhone 11 Pro, Google Pixel 2 */
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  .modalContainer {
+    height: 60%;
+    width: 90%;
+  }
+
+  .formButton {
+    font-size: 1rem;
+  }
+
+  .formInput {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .formHeading {
+    font-size: 1rem;
+  }
 }
 
-/* Media queries remain the same */
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}

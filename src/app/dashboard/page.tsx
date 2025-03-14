@@ -143,10 +143,10 @@ const AdminDashboardPage = () => {
               </button>
               <button
                 className={`${styles.button} quicksand-text`}
-                onClick={() => router.push("/admins")}
+                onClick={() => router.push("/users")}
                 aria-label="View Admins"
               >
-                View Admins
+                View Users
               </button>
             </div>
 

@@ -3,9 +3,8 @@
   margin-right: auto;
   overflow-x: hidden;
   position: relative;
-  color: #2c3e50; /* Darker text for a more professional look */
+  color: #333; /* Dark text for contrast */
   width: 100%;
-  max-width: 100vw;
 }
 
 .landingSection {
@@ -15,11 +14,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: clamp(1rem, 5vw, 2.5rem);
-  background-color: #f9f9f9; /* Subtle off-white background */
-  background-image: linear-gradient(rgba(220, 220, 220, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(220, 220, 220, 0.1) 1px, transparent 1px); /* Subtle grid pattern */
-  background-size: 20px 20px; /* Smaller, more refined grid */
+  padding: 2rem; /* Added padding for a spacious feel */
+  background-color: #f8fafc; /* Light background color */
+  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px),
+    radial-gradient(circle, #d1d5db 1px, transparent 1px); /* Grid pattern */
+  background-position: 0 0, 25px 25px; /* Offset the grid */
+  background-size: 50px 50px; /* Set the grid size */
 }
 
 /* Welcome Section */
@@ -32,50 +32,45 @@
   min-height: 30%;
   max-width: 80rem;
   width: 100%;
-  padding: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: clamp(1rem, 4vw, 2rem);
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .heading {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-family: 'Montserrat', 'Roboto', sans-serif; /* Modern, attractive font with good weight variation */
+  font-size: 2.2rem;
+  font-family: "Georgia", serif; /* Elegant serif font */
   font-weight: 600;
-  color: #1a365d; /* Deep navy blue for authority */
-  margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
-  letter-spacing: 0.5px;
-  width: 100%;
+  color: #2c3e50; /* Dark gray for a refined look */
+  margin-bottom: 0.5rem;
 }
 
 .subHeading {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-size: 1.1rem;
   font-weight: 500;
-  font-family: 'Montserrat', 'Roboto', sans-serif;
-  color: #4a5568; /* Muted slate gray */
-  margin-bottom: clamp(0.75rem, 3vw, 1.25rem);
-  letter-spacing: 0.3px;
-  width: 100%;
+  font-family: "Georgia", serif;
+  color: #34495e; /* Softer gray */
+  margin-bottom: 1rem;
 }
 
 .welcomeText {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  font-family: 'Open Sans', 'Lato', sans-serif; /* Clean, modern and highly readable */
-  color: #4a5568;
-  max-width: min(90%, 770px);
+  font-size: 1.2rem;
+  font-family: "Georgia", serif;
+  color: #555;
+  max-width: 770px;
   width: 100%;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Form container styles */
 .formContainer {
-  margin-top: clamp(0.5rem, 2vw, 1rem);
-  padding: clamp(1.2rem, 4vw, 2.5rem);
-  background-color: #ffffff;
-  border-radius: 8px; /* Less rounded for a more professional look */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
-  border: 1px solid #e2e8f0; /* Subtle border */
-  max-width: min(90%, 550px);
+  margin-top: 0.5rem;
+  padding: 2rem;
+  background-color: #ffffff; /* White background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 550px;
   width: 100%;
-  min-height: clamp(250px, 50vh, 300px);
+  min-height: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -176,7 +171,7 @@
 }
 
 /* Small Mobile Devices (Portrait) */
-@media only screen and (max-width: 375px) {
+@media only screen and (min-width: 321px) and (max-width: 375px) {
   .landingSection {
     padding: 0.8rem;
   }
@@ -201,33 +196,27 @@
   }
 }
 
-/* Handle orientation changes */
-@media screen and (orientation: landscape) and (max-height: 500px) {
+/* Extra Small Mobile Devices (Portrait) */
+@media only screen and (max-width: 320px) {
   .landingSection {
-    min-height: 120vh;
+    padding: 0.7rem;
   }
-  
-  .welcomeSection {
-    margin-bottom: 1rem;
-  }
-  
-  .formContainer {
-    min-height: 220px;
-  }
-}
 
-/* Ensure text readability on very small screens */
-@media screen and (max-width: 280px) {
   .heading {
     font-size: 1.2rem;
   }
-  
-  .subHeading, .welcomeText {
+
+  .subHeading {
     font-size: 0.8rem;
   }
-  
+
+  .welcomeText {
+    font-size: 0.85rem;
+  }
+
   .formContainer {
     padding: 0.8rem;
-    min-height: 200px;
+    max-width: 95%;
+    min-height: 220px;
   }
 }
