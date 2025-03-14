@@ -62,13 +62,13 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({
     setAdminUser(null);
     Cookies.remove("admin_user");
     setShowModal(true); // Show modal on logout
-    router.push("/admin-login");
+    router.push("/");
   };
 
   // Memoize context value to avoid unnecessary re-renders
   const contextValue = useMemo(
     () => ({ adminUser, setAdminUser, login, logout, showModal, setShowModal }),
-    [adminUser, showModal, login, logout, setShowModal]  // Added missing dependencies
+    [adminUser, showModal, login, logout, setShowModal] // Added missing dependencies
   );
 
   return (

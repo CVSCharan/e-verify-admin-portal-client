@@ -14,12 +14,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 2rem; /* Added padding for a spacious feel */
-  background-color: #f8fafc; /* Light background color */
-  background-image: radial-gradient(circle, #d1d5db 1px, transparent 1px),
-    radial-gradient(circle, #d1d5db 1px, transparent 1px); /* Grid pattern */
-  background-position: 0 0, 25px 25px; /* Offset the grid */
-  background-size: 50px 50px; /* Set the grid size */
+  padding: clamp(0.8rem, 3vw, 2rem); /* Responsive padding */
+  background-color: #f9f9f9; /* Subtle off-white background */
+  background-image: linear-gradient(
+      rgba(220, 220, 220, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(220, 220, 220, 0.1) 1px, transparent 1px); /* Subtle grid pattern */
+  background-size: 20px 20px; /* Smaller, more refined grid */
 }
 
 /* Welcome Section */

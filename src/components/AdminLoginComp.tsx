@@ -33,13 +33,13 @@ const AdminLoginComp = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
-        credentials: "include", // ✅ Ensures the cookie is set
+        credentials: "include",
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        login(data); // ✅ Store user data in cookies
+        login(data);
         setMessage(data.message);
         setError(null);
         router.push(`/dashboard`);
@@ -54,82 +54,82 @@ const AdminLoginComp = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={styles.formContainer}
-      aria-labelledby="login-heading"
-    >
-      <h2 id="login-heading" className={styles.formHeading}>
-        Administrator Login
-      </h2>
+    <div className={styles.loginContainer}>
+      <div className={styles.loginCard}>
+        <form
+          onSubmit={handleSubmit}
+          className={styles.formContainer}
+          aria-labelledby="login-heading"
+        >
+          <h2 id="login-heading" className={styles.formHeading}>
+            Administrator Login
+          </h2>
 
-      <div className={styles.inputGroup}>
-        <label htmlFor="username" className={styles.visuallyHidden}>
-          Username
-        </label>
-        <input
-          placeholder="Username"
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          className={styles.formInput}
-          aria-required="true"
-          aria-invalid={error && !username ? "true" : "false"}
-        />
+          <div className={styles.inputGroup}>
+            <label htmlFor="username" className={styles.inputLabel}>
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              className={`${styles.formInput} ${styles.usernameInput}`}
+              aria-required="true"
+              aria-invalid={error && !username ? "true" : "false"}
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="password" className={styles.inputLabel}>
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className={`${styles.formInput} ${styles.passwordInput}`}
+              aria-required="true"
+              aria-invalid={error && !password ? "true" : "false"}
+            />
+          </div>
+
+          <button
+            type="button"
+            className={styles.forgotPassword}
+            onClick={() => setForgotPasswordOpen(true)}
+          >
+            Forgot Password?
+          </button>
+
+          <button type="submit" className={styles.formButton}>
+            Log In
+          </button>
+
+          <ForgotPasswordModal
+            target="Admin"
+            open={forgotPasswordOpen}
+            onClose={() => setForgotPasswordOpen(false)}
+          />
+
+          {error && (
+            <p className={styles.error} role="alert">
+              {error}
+            </p>
+          )}
+          {message && (
+            <p className={styles.success} role="status">
+              {message}
+            </p>
+          )}
+        </form>
       </div>
-
-      <div className={styles.inputGroup}>
-        <label htmlFor="password" className={styles.visuallyHidden}>
-          Password
-        </label>
-        <input
-          placeholder="Password"
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className={styles.formInput}
-          aria-required="true"
-          aria-invalid={error && !password ? "true" : "false"}
-        />
-      </div>
-
-      {/* Forgot Password Button */}
-      <button
-        type="button"
-        className={styles.forgotPassword}
-        onClick={() => setForgotPasswordOpen(true)}
-      >
-        Forgot Password?
-      </button>
-
-      <button type="submit" className={styles.formButton}>
-        Log In
-      </button>
-
-      {/* Forgot Password Modal */}
-      <ForgotPasswordModal
-        target="Admin"
-        open={forgotPasswordOpen}
-        onClose={() => setForgotPasswordOpen(false)}
-      />
-
-      {error && (
-        <p className={styles.error} role="alert">
-          {error}
-        </p>
-      )}
-      {message && (
-        <p className={styles.success} role="status">
-          {message}
-        </p>
-      )}
-    </form>
+    </div>
   );
 };
 

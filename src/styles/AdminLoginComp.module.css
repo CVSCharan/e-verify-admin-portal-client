@@ -1,158 +1,200 @@
-.formContainer {
-  height: 100%;
-  width: 100%;
+.loginContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.5rem 1.5rem;
+  width: 100%;
+  background-color: #f5f7fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.loginCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.formContainer {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1.25rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.formHeading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #4b0406, #6b0f12);
+  border-radius: 3px;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.4rem;
+  text-align: left;
 }
 
 .formInput {
   width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc; /* Soft border */
-  border-radius: 8px; /* Rounded corners */
-  font-size: 1.1rem;
-  font-family: "Georgia", serif;
-  outline: none;
-  transition: border-color 0.3s ease;
+  padding: 0.7rem 0.75rem 0.7rem 2.25rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  background-position: 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+
+/* Username input with icon */
+.usernameInput {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z' fill='%23666666'/%3E%3C/svg%3E");
+}
+
+/* Password input with icon */
+.passwordInput {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M19 10H5C3.89543 10 3 10.8954 3 12V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V12C21 10.8954 20.1046 10 19 10ZM5 20V12H19V20H5ZM12 1C14.7614 1 17 3.23858 17 6V10H15V6C15 4.34315 13.6569 3 12 3C10.3431 3 9 4.34315 9 6V10H7V6C7 3.23858 9.23858 1 12 1ZM12 15C11.4477 15 11 15.4477 11 16V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V16C13 15.4477 12.5523 15 12 15Z' fill='%23666666'/%3E%3C/svg%3E");
 }
 
 .formInput:focus {
-  border-color: #4b0406; /* Soft blue for focus state */
+  border-color: #4b0406;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 4, 6, 0.1);
+}
+
+.forgotPassword {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #4b0406;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin: -0.5rem 0 1rem 0;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: #a82b30;
+  text-decoration: underline;
+}
+
+.formButton {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(90deg, #4b0406, #6b0f12);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+}
+
+.formButton:hover {
+  background: linear-gradient(90deg, #5b0507, #7b1f22);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #d32f2f;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  text-align: center;
+  border: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+.success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+  text-align: center;
+  border: 1px solid rgba(46, 125, 50, 0.3);
 }
 
 .visuallyHidden {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
   border: 0;
 }
 
-.formHeading {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.inputGroup {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.formHeading {
-  margin-bottom: 1rem;
-  font-family: "Georgia", serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.6;
-}
-
-.formButton {
-  padding: 0.5rem 2rem;
-  background: linear-gradient(90deg, #4b0406, #6b0f12, #a82b30);
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.formButton:hover {
-  background: linear-gradient(90deg, #4b0406, #6b0f12, #a82b30);
-}
-
-.forgotPassword {
-  margin-bottom: 1rem;
-  font-family: "Georgia", serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.6;
-  background-color: transparent;
-  border: 0;
-  align-self: flex-end;
-  text-decoration: underline;
-}
-
-/* Extra Small Mobile Devices (Portrait) */
-/* iPhone SE, older Android phones */
-@media only screen and (max-width: 320px) {
-  .modalContainer {
-    height: 60%;
-    width: 90%;
+/* Media Queries */
+@media (max-width: 480px) {
+  .loginContainer {
+    padding: 1rem;
   }
 
-  .formButton {
-    font-size: 0.9rem;
-  }
-
-  .formInput {
-    font-size: 1rem;
-    margin-bottom: 0.7rem;
+  .formContainer {
+    padding: 1.25rem;
   }
 
   .formHeading {
-    font-size: 0.9rem;
-  }
-}
-
-/* Small Mobile Devices (Portrait) */
-/* iPhone 6/7/8, Galaxy S8 */
-@media only screen and (min-width: 321px) and (max-width: 375px) {
-  .modalContainer {
-    height: 60%;
-    width: 90%;
-  }
-
-  .formButton {
-    font-size: 1rem;
-  }
-
-  .formInput {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
-  .formHeading {
-    font-size: 1rem;
-  }
-}
-
-/* Medium Mobile Devices (Portrait) */
-/* iPhone 11 Pro, Google Pixel 2 */
-@media only screen and (min-width: 376px) and (max-width: 425px) {
-  .modalContainer {
-    height: 60%;
-    width: 90%;
+  .formInput {
+    padding: 0.65rem 0.65rem 0.65rem 2.1rem;
+    font-size: 0.9rem;
   }
 
   .formButton {
-    font-size: 1rem;
-  }
-
-  .formInput {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .formHeading {
-    font-size: 1rem;
+    padding: 0.65rem 1.25rem;
   }
 }
 
-/* Tablets (portrait and landscape) */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 360px) {
+  .formContainer {
+    padding: 1rem;
+  }
+
+  .formHeading {
+    font-size: 1.1rem;
+  }
+
+  .inputLabel {
+    font-size: 0.8rem;
+  }
+
+  .formInput {
+    padding: 0.6rem 0.6rem 0.6rem 2rem;
+    font-size: 0.85rem;
+  }
 }
