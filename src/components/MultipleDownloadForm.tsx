@@ -195,7 +195,7 @@ const MultipleDownloadForm: React.FC<MultipleDownloadFormProps> = ({
         await new Promise((resolve) => {
           QRCode.toCanvas(
             highResQRCanvas,
-            `https://e-verify.technotran.in/certificate/${certificate.certificateId}`,
+            `https://e-verify.robomonk.ai/certificate/${certificate.certificateId}`,
             {
               width: 200 * scale,
               margin: 2,

@@ -70,7 +70,7 @@ const CertificatesTable: React.FC<CertificatesTableProps> = ({
                   <tr key={certificate._id}>
                     <td>
                       <Link
-                        href={`https://e-verify.technotran.in/certificate/${certificate.certificateId}`}
+                        href={`https://e-verify.robomonk.ai/certificate/${certificate.certificateId}`}
                         className={styles.link}
                         aria-label={`View certificate for ${certificate.name}`}
                       >

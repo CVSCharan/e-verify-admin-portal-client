@@ -98,7 +98,7 @@ export const SingleDownloadForm: React.FC<SingleDownloadFormProps> = ({
     // Generate QR Code
     QRCode.toCanvas(
       qrCanvasRef.current,
-      `https://e-verify.technotran.in/certificate/${certificate.certificateId}`,
+      `https://e-verify.robomonk.ai/certificate/${certificate.certificateId}`,
       {
         width: 100,
         margin: 2,
@@ -306,7 +306,7 @@ export const SingleDownloadForm: React.FC<SingleDownloadFormProps> = ({
       await new Promise((resolve) => {
         QRCode.toCanvas(
           qrCanvasRef.current,
-          `https://e-verify.technotran.in/certificate/${certificate.certificateId}`,
+          `https://e-verify.robomonk.ai/certificate/${certificate.certificateId}`,
           {
             width: 200 * scale,
             margin: 2,
