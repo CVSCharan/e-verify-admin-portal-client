@@ -40,8 +40,8 @@ export const SingleDownloadForm: React.FC<SingleDownloadFormProps> = ({
     // Text Styles
     ctx.font = `500 16px "ArialCustom", Arial, sans-serif`;
     ctx.lineWidth = 0.5;
-    ctx.strokeStyle = "black";
-    ctx.fillStyle = "black";
+    ctx.strokeStyle = "#4b0406";
+    ctx.fillStyle = "#4b0406";
 
     // Display Student Details
     ctx.strokeText(certificate.name, 400, 200);
@@ -265,8 +265,8 @@ export const SingleDownloadForm: React.FC<SingleDownloadFormProps> = ({
       // Student Name
       ctx.font = `600 16px "ArialCustom", Arial, sans-serif`;
       ctx.lineWidth = 0.5;
-      ctx.strokeStyle = "black";
-      ctx.fillStyle = "black";
+      ctx.strokeStyle = "#4b0406";
+      ctx.fillStyle = "#4b0406";
       ctx.strokeText(certificate.name, canvas.width / 2 + 7, 195);
       ctx.fillText(certificate.name, canvas.width / 2 + 7, 195);
 
